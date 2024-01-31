@@ -1,0 +1,9 @@
+pub fn reverse(input: &str) -> String {
+    let i: String = input.to_string();
+
+    if i.is_empty() {
+        return i;
+      } else {
+          return i.chars().rev().collect();
+        }
+  }

@@ -1,0 +1,12 @@
+Function Get-ReverseString {
+    [CmdletBinding()]
+    Param(
+      [Parameter(Postition=1, ValueFromPipeline=$true)]
+      [string]$Forward
+    )
+
+    $array = $Forward.ToCharArray();
+    [array]::Reverse($array);
+    $new = -join($array);
+    return $new;
+  }
