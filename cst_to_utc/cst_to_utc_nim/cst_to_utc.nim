@@ -1,8 +1,6 @@
 import std/os
 import std/strutils
 
-# echo paramCount(), " ", paramStr(1)
-
 # Check number of arguments
 if paramCount() != 2:
   echo "Invalid arguments!"
