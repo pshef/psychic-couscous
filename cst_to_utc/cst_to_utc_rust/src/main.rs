@@ -8,7 +8,7 @@ fn main() {
     // Checks number of arguments
     if args.len() != 3 {
         println!("Invalid arguments!");
-        println!(">> {} <hour> <AM or PM>", args[0]);
+        println!(">> Usage: {} <hour> <AM or PM>", args[0]);
         exit(1);
     };
 
@@ -27,15 +27,30 @@ fn main() {
     let day_night: &str = args[2].as_str();
     if (day_night.eq("PM")) || (day_night.eq("AM")) {
     } else {
-        panic!(
+        println!(
             "Invalid arguments! Please use AM or PM.\n\
             >> Usage: {} <hour> <AM or PM>",
             args[0]
         );
+        exit(1);
     };
 
     // Converts the time
-    if day_night == "PM" {
+    if day_night == "AM" && hour > 12 {
+        println!(
+            "Invalid arguments! hours 13-23 can't be AM.\n\
+            >> Usage: {} <hour> <AM or PM>",
+            args[0]
+        );
+        exit(1);
+    } else if day_night == "AM" && hour == 12 {
+        println!(
+            "Invalid arguments! Please use 00 for midnight\n\
+            >> Usage: {} <hour> <AM or PM>",
+            args[0]
+        );
+        exit(1);
+    } else if day_night == "PM" {
         let new_hour = hour + 12;
         let utc = new_hour + 6;
         if utc > 23 {

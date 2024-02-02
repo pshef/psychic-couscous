@@ -1,1 +1,1 @@
-/home/pop/projects/rust/cst_to_utc/target/debug/cst_to_utc: /home/pop/projects/rust/cst_to_utc/src/main.rs
+/home/pop/GitHub_repos/psychic-couscous/cst_to_utc/cst_to_utc_rust/target/debug/cst_to_utc: /home/pop/GitHub_repos/psychic-couscous/cst_to_utc/cst_to_utc_rust/src/main.rs
